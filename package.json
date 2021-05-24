@@ -1,0 +1,26 @@
+{
+  "name": "techBlog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandellbutler/Tech-Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandellbutler/Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/mandellbutler/Tech-Blog#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
