@@ -1,7 +1,7 @@
 //CUSTOMIZE!!!!!!!!!REF14.1.17
 
 const sequelize = require('../config/connection');
-const seedUser = require('./userData');
+const seedUser = require('./user-seeds');
 // const seedPaintings = require('./paintingData');
 
 const seedAll = async () => {

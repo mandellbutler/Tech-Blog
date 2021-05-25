@@ -8,27 +8,27 @@ const userData = [
   },
   {
     name: 'Summer Rain',
-    emai: 'mrssummerrain@blogpost.com',
+    email: 'mrssummerrain@blogpost.com',
     password: 'summer1983',
   },
   {
     name: 'Porter Scottsburger',
-    emai: 'burgerman22@blogpost.com',
+    email: 'burgerman22@blogpost.com',
     password: 'beammeup1884',
   },
   {
     name: 'Winter Thyme',
-    emai: 'winterseason@blogpost.com',
+    email: 'winterseason@blogpost.com',
     password: 'winter1993',
   },
   {
     name: 'Toby Peters',
-    emai: 'tp83@blogpost.com',
+    email: 'tp83@blogpost.com',
     password: 'tobypeters1',
   },
   {
     name: 'Jamie Ashton',
-    emai: 'ja2345@blogpost.com',
+    email: 'ja2345@blogpost.com',
     password: 'jamieHatesmen4eva',
   },
 
