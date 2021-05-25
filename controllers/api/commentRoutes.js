@@ -1,31 +1,41 @@
 const router = require('express').Router();
-const bcrypt = require('bcrypt');
-const User = require('../../models/User');//NEED TO HAVE USER MODEL OR CHANGE THIS 'USER' ENDPOINT
+const Comment = require('../../models/Comment');//NEED TO HAVE USER MODEL OR CHANGE THIS 'USER' ENDPOINT
 
-// CREATE a new user
+// CREATE a new comment
 router.post('/', async (req, res) => {
   try {
-    const newUser = req.body;
-    // hash the password from 'req.body' and save to newUser
-    newUser.password = await bcrypt.hash(req.body.password, 10);
-    // create the newUser with the hashed password and save to DB
-    const userData = await User.create(newUser);
-    res.status(200).json(userData);
+    const newComment = req.body;
+    // create the newComment
+    const commentData = await User.create(newComment);
+    res.status(200).json(commentData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-//Get Users
+//Get Comments
 
 router.get('/', async (req, res) => {
   try {
-    const allUsers = await User.findAll();
-    res.status(200).json(allUsers);
+    const allComments = await Comment.findAll();
+    res.status(200).json(allComments);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
+
+//Delete
+
+router.destroy('/:id', async (req, res) => {
+    try {
+      const commentsById = await Comment.findOne();
+      res.status(200).json(commentsById);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+});
+
 
 // Login
 router.post('/login', async (req, res) => {
@@ -54,7 +64,6 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user_id = dbUserData.Id
 
       res
         .status(200)
@@ -78,5 +87,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-
-
