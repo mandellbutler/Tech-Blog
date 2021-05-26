@@ -26,13 +26,12 @@ router.get('/', async (req, res) => {
 //Get comments by ID
 router.get('/:id', async (req, res) => {
     try {
-      const commentById = await Comment.findOne();
+      const commentById = await Comment.findByPk(req.params.id); 
       res.status(200).json(commentById);
     } catch (err) {
       res.status(400).json({message: "Comment ID not found."});
     }
-});
-
+  });
 
 //Delete
 // router.destroy('/:id', async (req, res) => {

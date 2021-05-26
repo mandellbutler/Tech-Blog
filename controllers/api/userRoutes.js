@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 //by id
 router.get('/:id', async (req, res) => {
   try {
-    const userById = await User.findOne();
+    const userById = await User.findByPk(req.params.id); 
     res.status(200).json(userById);
   } catch (err) {
     res.status(400).json({message: "Comment ID not found."});
