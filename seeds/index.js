@@ -1,9 +1,7 @@
-//CUSTOMIZE!!!!!!!!!REF14.1.17
-
 const sequelize = require('../config/connection');
 const seedUser = require('./user-seeds');
 const seedComment = require('./comment-seeds');
-// const seedPaintings = require('./paintingData');
+const seedPost = require('./post-seeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -11,6 +9,8 @@ const seedAll = async () => {
   await seedUser();
 
   await seedComment();
+
+  await seedPost();
 
   process.exit(0);
 };
