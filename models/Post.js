@@ -18,7 +18,6 @@ Post.init(
     post_content: {
       type: DataTypes.TEXT,
       allowNull: false,
-      unique: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -31,6 +30,7 @@ Post.init(
   {
     sequelize,
     timestamps: true,
+    createdAt: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'post',
