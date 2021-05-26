@@ -23,25 +23,35 @@ router.get('/', async (req, res) => {
   }
 });
 
-//Get comments by ID
+//Get comments by user ID
 router.get('/:id', async (req, res) => {
     try {
-      const commentById = await Comment.findByPk(req.params.user_id); 
-      res.status(200).json(commentById);
+        const commentByUserId = await Comment.findByPk(req.params.user_id); 
+        res.status(200).json(commentByUserId);
+    } catch (err) {
+        res.status(400).json({message: "Comment's User ID not found."});
+    }
+});
+
+//Get comments by user ID
+router.get('/:id', async (req, res) => {
+    try {
+        const commentById = await Comment.findByPk(req.params.id); 
+        res.status(200).json(commentById);
+    } catch (err) {
+        res.status(400).json({message: "Comment ID not found."});
+    }
+});
+
+//Delete
+router.delete('/:id', async (req, res) => {
+    try {
+      const commentsById = await Comment.findByPk(req.params.id); 
+      res.status(200).json(commentsById);
     } catch (err) {
       res.status(400).json({message: "Comment ID not found."});
     }
-  });
-
-//Delete
-// router.destroy('/:id', async (req, res) => {
-//     try {
-//       const commentsById = await Comment.findOne();
-//       res.status(200).json(commentsById);
-//     } catch (err) {
-//       res.status(400).json({message: "Comment ID not found."});
-//     }
-// });
+});
 
 
 module.exports = router;
