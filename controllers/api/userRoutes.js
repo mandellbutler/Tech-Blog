@@ -3,9 +3,10 @@ const bcrypt = require('bcrypt');
 const User = require('../../models/User');//NEED TO HAVE USER MODEL OR CHANGE THIS 'USER' ENDPOINT
 
 // CREATE a new user
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const newUser = req.body;
+    console.log(req.body)
     // hash the password from 'req.body' and save to newUser
     newUser.password = await bcrypt.hash(req.body.password, 10);
     // create the newUser with the hashed password and save to DB
@@ -30,10 +31,10 @@ router.get('/', async (req, res) => {
 //by id
 router.get('/:id', async (req, res) => {
   try {
-    const userById = await User.findByPk(req.params.id); 
+    const userById = await User.findByPk(req.params.id);
     res.status(200).json(userById);
   } catch (err) {
-    res.status(400).json({message: "Comment ID not found."});
+    res.status(400).json({ message: "Comment ID not found." });
   }
 });
 
