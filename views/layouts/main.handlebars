@@ -12,15 +12,21 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar bg-success text-white">
-      <h1>TechBlog<em>ish</em></h1>
-      <a href="/" class="text-white">Home</a>
-      {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-      <a href="/login" class="text-white">Login</a>
-      {{/if}}
+  <header class="container bg-success text-white">
+    <nav class="navbar row">
+      <div class="col-8">
+        <h1>TechBlog<span class="text-warning"><em>ish</em></span></h1>
+      </div>
+      <div class="col-2">
+        <a href="/" class="text-white">Home</a>
+      </div>
+      <div class="col-2">
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login" class="text-white">Login</a>
+        {{/if}}
+      </div>
     </nav>
   </header>
 
