@@ -1,25 +1,27 @@
-// const router = require('express').Router();
-// const Post = require('../../models/Post');//NEED TO HAVE USER MODEL OR CHANGE THIS 'USER' ENDPOINT
+const router = require('express').Router();
+const Post = require('../../models/Post');//NEED TO HAVE USER MODEL OR CHANGE THIS 'USER' ENDPOINT
 
-// //Render All posts to render upon login
-// router.get('/', async (req, res) => {
-//   try {
-//     const allPosts = await Post.findAll();
-//     res.status(200).json(allPosts);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+//Render All posts to render upon login
+router.get('/', async (req, res) => {
+  try {
+    let posts = await Post.findAll();
+    posts = posts.map(post => post.get({ plain: true }))
+    console.log(posts)
+    res.render('post', { posts });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const postByUserId = await Post.findByPk(req.params.user_id);
-//     res.status(200).json(postByUserId);
-//   } catch (err) {
-//     res.status(400).json({ message: "Comment's User ID not found." });
-//   }
-// });
+router.get('/:id', async (req, res) => {
+  try {
+    const postByUserId = await Post.findByPk(req.params.user_id);
+    res.status(200).json(postByUserId);
+  } catch (err) {
+    res.status(400).json({ message: "Comment's User ID not found." });
+  }
+});
 // router.get('/', (req, res) => {
 //   Post.findAll({
 //     attributes: [
