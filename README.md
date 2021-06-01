@@ -24,11 +24,6 @@ To install, simply clone the Github repository and add it to your local repo via
 
 
 
-![Show All Tags](./assets/gifs/##.gif)
-
-
-![Update Tags](./assets/gifs/##.gif)
-
 
 ![Delete Tags](./assets/gifs/##.gif)
 
