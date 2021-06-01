@@ -6,6 +6,7 @@ const User = require('../../models/User');//NEED TO HAVE USER MODEL OR CHANGE TH
 router.post('/signup', async (req, res) => {
   try {
     const newUser = req.body;
+    console.log(req.body)
     // hash the password from 'req.body' and save to newUser
     newUser.password = await bcrypt.hash(req.body.password, 10);
     // create the newUser with the hashed password and save to DB
