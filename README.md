@@ -24,7 +24,7 @@ To install, simply clone the Github repository and add it to your local repo via
 
 
 * Login / Sign Up Page
-<img src="public/assets/images/login.png" width="400">
+<img src="public/images/login.png" width="400">
 
 
 ![Delete Tags](./assets/gifs/##.gif)
