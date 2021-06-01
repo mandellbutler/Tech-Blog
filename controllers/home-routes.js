@@ -9,6 +9,11 @@ router.get('/login', (req, res) => {
     return;
   }
   res.render('login');
+});
+
+router.get('/', (req, res) => {
+  res.render('homepage', { loggedIn: req.session.loggedIn });
+
 
   router.get('/homepage', (req, res) => {
     res.render('homepage')
