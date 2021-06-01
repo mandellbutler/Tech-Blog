@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Post = require('../../models/Post');//NEED TO HAVE USER MODEL OR CHANGE THIS 'USER' ENDPOINT
 
+<<<<<<< HEAD
 // CREATE a new comment
 router.post('/', async (req, res) => {
   try {
@@ -18,17 +19,31 @@ router.get('/', async (req, res) => {
   try {
     const allPosts = await Post.findAll();
     res.status(200).json(allPosts);
+=======
+//Render All posts to render upon login
+router.get('/', async (req, res) => {
+  try {
+    let posts = await Post.findAll();
+    posts = posts.map(post => post.get({ plain: true }))
+    console.log(posts)
+    res.render('post', { posts });
+>>>>>>> main
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+<<<<<<< HEAD
 //Get comments by user ID
+=======
+
+>>>>>>> main
 router.get('/:id', async (req, res) => {
   try {
     const postByUserId = await Post.findByPk(req.params.user_id);
     res.status(200).json(postByUserId);
   } catch (err) {
+<<<<<<< HEAD
     res.status(400).json({ message: "Post's User ID not found." });
   }
 });
@@ -53,5 +68,42 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+=======
+    res.status(400).json({ message: "Comment's User ID not found." });
+  }
+});
+// router.get('/', (req, res) => {
+//   Post.findAll({
+//     attributes: [
+//       'id',
+//       'title',
+//       'post_content',
+//       'user_id',
+//       'created_at'
+//     ],
+//     include: [{
+//       model: Comment,
+//       attributes: ['id', 'user_comment', 'user_id', 'post_id', 'created_at'],
+//       include: {
+//         model: User,
+//         attributes: ['name']
+//       }
+//     },
+//     {
+//       model: User,
+//       attributes: ['name']
+//     }
+//     ]
+//   })
+//     .then(dbPostData => {
+//       const posts = dbPostData.map(post => post.get({ plain: true }));
+//       res.render('post', { posts, loggedIn: req.session.loggedIn });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+>>>>>>> main
 
 module.exports = router;
