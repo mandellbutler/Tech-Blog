@@ -8,7 +8,7 @@
 
 
 # Description
-
+This Tech blog chronicles personal commentary on varius issues relating to Technology and Web Development.
 
 
 
@@ -20,7 +20,7 @@ To install, simply clone the Github repository and add it to your local repo via
 
 
 # Usage
-
+Upon login, the user is introduced to the collection of TechBlogish posts, listed in chronological order. The user has the option add, edit, or delete comments on each post.
 
 
 * Login / Sign Up Page
