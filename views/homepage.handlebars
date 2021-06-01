@@ -1,7 +1,9 @@
 <div class="post">
 
-  {{#each posts as |post|}}
-  {{> post-details}}
+  {{#each allPosts }}
+  <h1> {{ title }} </h1>
+  <div> {{ post_content }} </div>
+  {{!-- {{> post-details }} --}}
   {{/each}}
 
 </div>
