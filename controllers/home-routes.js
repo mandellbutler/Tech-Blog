@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 const sequelize = require('../config/connection');
-const { post } = require('./api');
+// const { post } = require('./api');
 
 // Login route
 router.get('/login', (req, res) => {
@@ -22,8 +22,9 @@ router.get('/', (req, res) => {
 
 
 router.get("/homepage", (req, res) => {
-  Post.findAll().then(posts => {
+  Post.findAll({ include: [{ model: Comment, include: [User] }] }).then(posts => {
     const allPosts = posts.map(post => post.get({ plain: true }))
+    console.log("All posts:", allPosts.comments)
     res.render('homepage', { allPosts })
   })
 
