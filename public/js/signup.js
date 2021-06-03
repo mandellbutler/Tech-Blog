@@ -13,7 +13,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      fetch('/api/post/', { method: 'GET' });
+      // fetch('/api/post/', { method: 'GET' });
+      document.location.replace('/homempage')
     } else {
       alert('Failed to sign up.');
     }
