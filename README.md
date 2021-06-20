@@ -27,7 +27,7 @@ Upon login, the user is introduced to the collection of TechBlogish posts, liste
 <img src="public/images/login.png" width="400">
 
 * Blog Posts:
-<img src="public/images/blog.png" width="400">
+<img src="public/images/post.png" width="400">
 
 
 ![Delete Tags](./public/gifs/login.gif)
