@@ -13,3 +13,17 @@
   border-radius: 5px;
   margin-bottom: 200px;
 }
+
+.content {
+  background-color: #9ACDB3;
+}
+
+.comments {
+  border-top: 2px solid white;
+}
+
+.caption {
+  font-size: 80%;
+  font-style: italic;
+  margin-left: 1em;
+}

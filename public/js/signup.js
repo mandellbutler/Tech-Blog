@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       // fetch('/api/post/', { method: 'GET' });
-      document.location.replace('/homempage')
+      document.location.replace('/homepage')
     } else {
       alert('Failed to sign up.');
     }

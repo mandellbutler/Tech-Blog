@@ -37,7 +37,7 @@ const commentData = [
     post_id: 6,
   },
   {
-    user_comment: 'There is a poem that my mother used to read to me before bedtime...it comes to mind when I read this blog. I would recite it, but unfortunately, it is rather graphic in nature.',
+    user_comment: 'There is a poem that my mother used to read to me before bedtime...it comes to mind when I read this blog. I would recite it, but unfortunately, it is rather graphic in nature. But I will leave you with this...the one universal truth is LOVE conquers all.',
     user_id: 2,
     post_id: 3,
   },

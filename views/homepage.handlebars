@@ -5,18 +5,17 @@
     <div class="card-body">
       <div class="card-header bg-success text-white">
         <h3> {{ title }} </h3>
+        <span class="caption text-warning"> Written by: User {{ user_id }} on {{ format_date createdAt }}</span>
       </div>
-      <div class="p-2">
+      <div class="content p-2">
         <p> {{ post_content }} </p>
-        <span> User: {{ user_id }} </span>
-        <span> Created At: {{ format_date createdAt }}</span><br><br>
       </div>
       <div>
-        <div class="container-header p-2 bg-success text-warning">
+        <div class="container-header p-2 bg-success text-white">
           <span>Comments:</span>
         </div>
         {{#each comments }}
-        <div class="p-2">
+        <div class="content comments p-2">
           <span> User: {{ user_id }} </span><br>
           <p> {{ user_comment }} </p>
         </div>
