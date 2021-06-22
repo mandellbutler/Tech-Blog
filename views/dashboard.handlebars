@@ -1,0 +1,28 @@
+{{#each posts}}
+<h1>{{title}}</h1>
+<div>{{post_content}}</div>
+<div>{{user_id}}</div>
+<div>{{timestamps}}</div>
+{{/each}}
+<form class="newpost text-success card m-3 box ms-4" style="width: 80%">
+  <div class="container mr-3">
+    <div>
+      <div>
+        <h2> Create New Post:</h2>
+        <div>
+          <label for="inputArea">Title:</label>
+        </div>
+        <div>
+          <input id="inputArea">
+        </div>
+      </div>
+      <div>
+        <label for="textArea">Post:</label>
+        <textarea class="form-control" id="textArea"></textarea>
+      </div>
+    </div>
+    <div class="container m-3">
+      <button class="btn bg-success text-white mb-3" type="submit">Add Post</button>
+    </div>
+  </div>
+</form>

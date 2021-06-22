@@ -20,12 +20,29 @@ router.get('/', (req, res) => {
 
 });
 
+router.get('/dashboard', (req, res) => {
+  User.findOne(
+    {
+      id: req.session.user_id
+    },
+    {
+      include: [Post]
+    }
+  )
+    .then(user => {
+      console.log("user: ", user)
+      const dbUser = user.get({ plain: true })
+      const posts = dbUser.posts
+      res.render('dashboard', { posts })
+    })
+})
+
 
 router.get("/homepage", (req, res) => {
   Post.findAll({ include: [{ model: Comment, include: [User] }] }).then(posts => {
     const allPosts = posts.map(post => post.get({ plain: true }))
     console.log("All posts:", allPosts.comments)
-    res.render('homepage', { allPosts })
+    res.render('homepage', { allPosts, loggedIn: req.session.loggedIn })
   })
 
 });
