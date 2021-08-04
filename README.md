@@ -14,7 +14,7 @@ This Tech blog chronicles personal commentary on varius issues relating to Techn
 
 
 # Installation
-To install, clone the Github repository and add it to your local repo via your choice code-editing software (ie Visual Studio Code).
+To install, simply clone the Github repository and add it to your local repo via your choice code-editing software (ie Visual Studio Code).
 
 
 
