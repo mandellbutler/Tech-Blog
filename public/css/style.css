@@ -30,4 +30,8 @@
 
 .newpost {
   background-color: #9ACDB3;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
